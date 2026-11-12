@@ -2,13 +2,10 @@
 # _headers — aturan header untuk Cloudflare Pages
 #
 # PENTING SEBELUM WEBSITE TAYANG:
-#   Baris "X-Robots-Tag: noindex" membuat Google TIDAK mengindeks website.
-#   Itu sengaja, selama website masih tahap persiapan.
-#   Saat website siap tayang untuk umum, HAPUS baris tersebut
-#   (lihat docs/PANDUAN-DEPLOY.md bagian "Checklist sebelum tayang").
+#   Website sudah siap diindeks mesin pencari.
+#   Jangan tambahkan X-Robots-Tag: noindex pada konfigurasi publik.
 # =====================================================================
 /*
-  X-Robots-Tag: noindex
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
