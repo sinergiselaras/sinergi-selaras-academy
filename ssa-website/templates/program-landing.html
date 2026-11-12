@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===== UBAH 1: JUDUL & DESKRIPSI (untuk Google dan pratinjau WhatsApp/Facebook) ===== -->
+  <title>JUDUL PROGRAM | Sinergi Selaras Academy</title>
+  <meta name="description" content="TULIS 1-2 KALIMAT DESKRIPSI PROGRAM (maksimal sekitar 155 karakter).">
+  <meta name="theme-color" content="#03105F">
+
+  <!-- ===== UBAH 2: OPEN GRAPH (pratinjau saat tautan dibagikan) ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Sinergi Selaras Academy">
+  <meta property="og:title" content="JUDUL PROGRAM | Sinergi Selaras Academy">
+  <meta property="og:description" content="TULIS 1-2 KALIMAT DESKRIPSI PROGRAM (samakan dengan deskripsi di atas).">
+  <!-- AKTIFKAN setelah domain diketahui: ganti NAMADOMAIN dan SLUG-PROGRAM, lalu hapus tanda komentar.
+       Untuk og:image, gunakan poster kelas bila ada, atau gambar default di bawah.
+  <meta property="og:url" content="https://NAMADOMAIN/programs/SLUG-PROGRAM/">
+  <meta property="og:image" content="https://NAMADOMAIN/assets/img/brand/og-default.jpg">
+  <link rel="canonical" href="https://NAMADOMAIN/programs/SLUG-PROGRAM/">
+  -->
+
+  <!-- ===== JANGAN DIUBAH (bagian di bawah ini sama untuk semua halaman program) ===== -->
+  <link rel="preload" href="/assets/fonts/poppins-700.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css?v=3">
+  <link rel="stylesheet" href="/assets/css/components.css?v=3">
+  <link rel="stylesheet" href="/assets/css/home.css?v=3">
+  <link rel="stylesheet" href="/assets/css/pages.css?v=3">
+  <script src="/assets/data/site-data.js?v=3"></script>
+  <script src="/assets/js/whatsapp.js?v=3"></script>
+</head>
+<!-- ===== UBAH 3: SLUG. Harus SAMA PERSIS dengan slug di assets/data/classes-data.js ===== -->
+<body data-program="GANTI-DENGAN-SLUG">
+  <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+  <header class="site-header" id="site-header">
+    <noscript>
+      <div class="container noscript-bar">
+        <a href="/">Beranda</a><a href="/public-classes/">Kelas Publik</a><a href="/in-house-training/">In-House Training</a><a href="/contact/">Kontak</a><a href="https://wa.me/628976770480">WhatsApp</a>
+      </div>
+    </noscript>
+  </header>
+  <script src="/assets/js/components.js?v=3"></script>
+
+  <main id="konten">
+    <section class="page-hero" aria-labelledby="judul-halaman" data-program-hero>
+      <div class="page-hero__bg" aria-hidden="true">
+        <span class="hero__shape hero__shape--disc"></span>
+        <span class="hero__shape hero__shape--ring"></span>
+        <span class="hero__shape hero__shape--quarter"></span>
+      </div>
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Jejak halaman"><ol><li><a href="/">Beranda</a></li><li><a href="/public-classes/">Kelas Publik</a></li><li aria-current="page" data-program-crumb>JUDUL PROGRAM</li></ol></nav>
+        <p class="page-hero__status" data-program-status></p>
+        <!-- ===== UBAH 4: tulis JUDUL PROGRAM yang sama di sini (untuk SEO; juga diisi otomatis oleh data) ===== -->
+        <h1 id="judul-halaman" data-program-title>JUDUL PROGRAM</h1>
+        <p class="page-hero__lead" data-program-summary></p>
+        <div class="page-hero__actions" data-program-actions></div>
+      </div>
+    </section>
+
+    <!-- Isi halaman dibuat otomatis dari classes-data.js. Tampilan cadangan bila JavaScript tidak berjalan: -->
+    <section class="section" aria-label="Detail program">
+      <div class="container" data-program-root>
+        <div class="callout">
+          <p><strong>Aktifkan JavaScript untuk melihat detail program ini.</strong></p>
+          <p><a href="/public-classes/">Lihat Kelas Publik</a> atau <a href="https://wa.me/628976770480">hubungi kami melalui WhatsApp</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--navy cta-band" aria-labelledby="cta-judul">
+      <div class="container">
+        <h2 id="cta-judul">Punya Pertanyaan tentang Program Ini?</h2>
+        <p>Hubungi kami untuk informasi lebih lanjut mengenai program dan jadwalnya.</p>
+        <div class="cta-band__actions">
+          <a class="btn btn--light" href="https://wa.me/628976770480" data-wa="umum"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="/assets/img/icons/sprite.svg#i-wa"></use></svg>Hubungi via WhatsApp</a>
+          <a class="btn btn--outline-light" href="/public-classes/">Lihat Kelas Publik</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <noscript><div class="container" style="padding-bottom:2rem"><p>Sinergi Selaras Academy &middot; Bandung, Indonesia &middot; <a href="https://wa.me/628976770480">WhatsApp +62 897 6770 480</a></p></div></noscript>
+  </footer>
+
+  <script src="/assets/data/classes-data.js?v=3" defer></script>
+  <script src="/assets/js/classes.js?v=3" defer></script>
+  <script src="/assets/js/program.js?v=3" defer></script>
+  <script src="/assets/js/main.js?v=3" defer></script>
+  <script src="/assets/js/pixel.js?v=3" defer></script>
+</body>
+</html>

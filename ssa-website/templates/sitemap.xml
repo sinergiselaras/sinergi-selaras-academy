@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE SITEMAP. JANGAN taruh di public/ sebelum website siap tayang dan domain diketahui.
+  Cara pakai (lihat docs/PANDUAN-DEPLOY.md):
+  1. Ganti semua NAMADOMAIN dengan domain Anda (contoh: www.contoh.com).
+  2. Tambahkan satu blok <url> untuk setiap halaman program yang sudah dibuat.
+  3. Simpan sebagai public/sitemap.xml, lalu tambahkan baris
+       Sitemap: https://NAMADOMAIN/sitemap.xml
+     ke public/robots.txt.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://NAMADOMAIN/</loc></url>
+  <url><loc>https://NAMADOMAIN/about/</loc></url>
+  <url><loc>https://NAMADOMAIN/training-programs/</loc></url>
+  <url><loc>https://NAMADOMAIN/public-classes/</loc></url>
+  <url><loc>https://NAMADOMAIN/in-house-training/</loc></url>
+  <url><loc>https://NAMADOMAIN/trainers/</loc></url>
+  <url><loc>https://NAMADOMAIN/testimonials/</loc></url>
+  <url><loc>https://NAMADOMAIN/contact/</loc></url>
+  <!-- Halaman program (contoh, hapus bila belum ada):
+  <url><loc>https://NAMADOMAIN/programs/SLUG-PROGRAM/</loc></url>
+  -->
+</urlset>

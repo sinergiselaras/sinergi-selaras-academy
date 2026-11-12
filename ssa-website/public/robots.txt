@@ -1,0 +1,3 @@
+# Sementara dibiarkan terbuka. Pengaturan "noindex" selama masa persiapan ada di file _headers.
+User-agent: *
+Allow: /
