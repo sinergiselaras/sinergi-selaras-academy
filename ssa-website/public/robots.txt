@@ -1,4 +1,4 @@
-# Sementara dibiarkan terbuka. Pengaturan "noindex" selama masa persiapan ada di file _headers.
+# Izinkan mesin pencari merayapi halaman publik website SSA.
 User-agent: *
 Allow: /
 
