@@ -123,7 +123,8 @@
   function actions(c, noDetail) {
     var h = '';
     if (c.status === 'dibuka' && c.registrationUrl) {
-      h += '<a class="btn btn--primary" href="' + esc(c.registrationUrl) + '" target="_blank" rel="noopener noreferrer" data-register>Daftar Sekarang</a>';
+      h += waButton(c, 'Daftar via WhatsApp', 'btn--outline');
+      h += '<a class="btn btn--primary" href="' + esc(c.registrationUrl) + '" target="_blank" rel="noopener noreferrer" data-register>Daftar via Form</a>';
     } else if (c.status === 'ditutup') {
       h += '<span class="btn btn--disabled" aria-disabled="true">Pendaftaran Ditutup</span>';
       h += waButton(c, 'Tanya Jadwal Berikutnya', 'btn--outline');
