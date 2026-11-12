@@ -80,9 +80,74 @@
 window.SSA_CLASSES = [
 
   /* ------------------------- DAFTAR KELAS ------------------------- */
-  /* Belum ada kelas yang dikonfirmasi.
-     [PLACEHOLDER: data kelas publik — judul, tanggal, lokasi, harga, status, link Google Form]
-     Selama daftar ini kosong, Beranda menampilkan kartu
-     "Jadwal kelas terbaru segera diumumkan" dengan tombol WhatsApp. */
+  {
+    slug: 'pelatihan-overhaul-batch-december',
+    title: 'Pelatihan Overhaul Batch December',
+    status: 'dibuka',
+    summary: 'Tingkatkan kemampuan teknis dalam melakukan pekerjaan overhaul mesin.',
+    description: [],
+    category: 'otomotif',
+    poster: '',
+    posterAlt: '',
+    startDate: '2026-12-01',
+    endDate: '2026-12-04',
+    timeText: '',
+    venue: 'Training Center Toyota Smart Service, Jatiasih',
+    city: 'Bekasi',
+    mode: 'offline',
+    price: 'Rp3.499.000',
+    priceNote: 'di luar penginapan',
+    registrationUrl: 'https://forms.gle/Qx9XozKVwgxU9cT8A',
+    featured: false,
+    visible: true,
+    hasLandingPage: false,
+    whatsappMessage: 'Halo SSA, saya ingin bertanya dan mendaftar Pelatihan Overhaul Batch December.'
+  },
+  {
+    slug: 'annual-plan-budgeting-bengkel-2027',
+    title: 'Annual Plan & Budgeting Bengkel 2027',
+    status: 'dibuka',
+    summary: 'Pelajari penyusunan rencana kerja dan anggaran tahunan untuk operasional bengkel.',
+    description: [],
+    category: 'otomotif',
+    poster: '',
+    posterAlt: '',
+    startDate: '2026-11-30',
+    endDate: '2026-12-01',
+    timeText: '',
+    venue: 'Hotel Horison Bekasi',
+    city: 'Bekasi',
+    mode: 'offline',
+    price: 'Rp2.750.000',
+    priceNote: '',
+    registrationUrl: 'https://forms.gle/nkrQsTw6FZcoXfK67',
+    featured: false,
+    visible: true,
+    hasLandingPage: false,
+    whatsappMessage: 'Halo SSA, saya ingin bertanya dan mendaftar Annual Plan & Budgeting Bengkel 2027.'
+  },
+  {
+    slug: 'becoming-an-effective-leader',
+    title: 'Becoming an Effective Leader',
+    status: 'dibuka',
+    summary: 'Latihan praktis untuk mengembangkan kemampuan memimpin, delegasi, komunikasi, dan pengambilan keputusan.',
+    description: [],
+    category: 'leadership',
+    poster: '',
+    posterAlt: '',
+    startDate: '2026-12-10',
+    endDate: '2026-12-11',
+    timeText: '',
+    venue: 'Hotel UTC Dago',
+    city: 'Bandung',
+    mode: 'offline',
+    price: 'Rp2.000.000',
+    priceNote: 'promo hingga 20 November 2026',
+    registrationUrl: 'https://forms.gle/uwA3CH56eJ8T23UZ8',
+    featured: false,
+    visible: true,
+    hasLandingPage: false,
+    whatsappMessage: 'Halo SSA, saya ingin bertanya dan mendaftar Becoming an Effective Leader.'
+  }
 
 ];
