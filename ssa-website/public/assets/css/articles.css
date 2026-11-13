@@ -1,0 +1,19 @@
+/* =====================================================================
+   articles.css — halaman indeks artikel SSA
+   Mengikuti token, tipografi, header, tombol, dan komponen utama SSA.
+   ===================================================================== */
+.article-intro{max-width:48rem}
+.article-intro p{font-size:1.05rem;color:var(--muted)}
+.article-topics{display:grid;grid-template-columns:1fr;gap:1rem}
+.article-topic{display:flex;gap:1rem;align-items:flex-start;padding:1.35rem;background:#fff;border:1px solid var(--line);border-radius:var(--radius-m)}
+.article-topic__icon{display:grid;place-items:center;flex:none;width:2.8rem;height:2.8rem;border-radius:14px;background:var(--light);color:var(--blue);font-size:1.15rem;font-weight:700}
+.article-topic h3{margin:0 0 .35rem;font-size:1.05rem}
+.article-topic p{margin:0;color:var(--muted);font-size:.925rem}
+.article-empty{display:grid;justify-items:start;gap:.65rem;padding:clamp(1.5rem,1rem + 2vw,2.25rem);background:#fff;border:1px dashed #9DB8DA;border-radius:var(--radius-l)}
+.article-empty__eyebrow{margin:0;color:var(--blue);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.article-empty h2{margin:0;font-size:clamp(1.35rem,1.1rem + 1.2vw,1.8rem)}
+.article-empty p{max-width:42rem;margin:0;color:var(--muted)}
+.article-empty__actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.55rem}
+.article-note{margin-top:1.25rem;padding:1rem 1.2rem;border-left:4px solid var(--red);background:var(--light);border-radius:0 var(--radius-s) var(--radius-s) 0;color:var(--muted);font-size:.9rem}
+@media(min-width:680px){.article-topics{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}}
+@media(max-width:480px){.article-empty__actions{width:100%}.article-empty__actions .btn{width:100%}}
