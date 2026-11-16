@@ -67,8 +67,8 @@ export async function onRequest(context) {
   }
 
   const userData = {};
-  if (typeof body.fbp === "string" && body.fbp.length <= 200 && /^fb\.1\./.test(body.fbp)) userData.fbp = body.fbp;
-  if (typeof body.fbc === "string" && body.fbc.length <= 500 && /^fb\.1\./.test(body.fbc)) userData.fbc = body.fbc;
+  if (typeof body.fbp === "string" && body.fbp.length <= 200 && /^fb\\.1\\./.test(body.fbp)) userData.fbp = body.fbp;
+  if (typeof body.fbc === "string" && body.fbc.length <= 500 && /^fb\\.1\\./.test(body.fbc)) userData.fbc = body.fbc;
 
   if (!userData.fbp && !userData.fbc) {
     return json({ error: "Cookie Meta belum tersedia untuk pencocokan event" }, 400, requestOrigin);
@@ -102,7 +102,20 @@ export async function onRequest(context) {
 
   const result = await metaResponse.json().catch(() => ({}));
   if (!metaResponse.ok || result.error) {
-    return json({ error: "Meta menolak event", meta_code: result.error?.code || null }, 502, requestOrigin);
+    const metaError = result.error || {};
+    return json({
+      error: "Meta menolak event",
+      meta_status: metaResponse.status,
+      meta_code: metaError.code || null,
+      meta_subcode: metaError.error_subcode || null,
+      meta_type: metaError.type || null,
+      meta_message: metaError.message || null,
+      fbtrace_id: metaError.fbtrace_id || null
+    }, 502, requestOrigin);
   }
-  return json({ accepted: true, events_received: result.events_received || 0, fbtrace_id: result.fbtrace_id || null }, 200, requestOrigin);
+  return json({
+    accepted: true,
+    events_received: result.events_received || 0,
+    fbtrace_id: result.fbtrace_id || null
+  }, 200, requestOrigin);
 }
