@@ -67,8 +67,8 @@ export async function onRequest(context) {
   }
 
   const userData = {};
-  if (typeof body.fbp === "string" && body.fbp.length <= 200 && /^fb\.1\./.test(body.fbp)) userData.fbp = body.fbp;
-  if (typeof body.fbc === "string" && body.fbc.length <= 500 && /^fb\.1\./.test(body.fbc)) userData.fbc = body.fbc;
+  if (typeof body.fbp === "string" && body.fbp.length <= 200 && /^fb\.\d+\./.test(body.fbp)) userData.fbp = body.fbp;
+  if (typeof body.fbc === "string" && body.fbc.length <= 500 && /^fb\.\d+\./.test(body.fbc)) userData.fbc = body.fbc;
 
   if (!userData.fbp && !userData.fbc) {
     return json({ error: "Cookie Meta belum tersedia untuk pencocokan event" }, 400, requestOrigin);
