@@ -1,13 +1,11 @@
-/* =====================================================================
-   pixel.js — Event tambahan Meta Pixel SSA.
-   Meta Pixel base code dan PageView sudah dimuat di masing-masing HTML.
-   File ini hanya mencatat Contact (klik WhatsApp) dan Lead (pendaftaran).
-   ===================================================================== */
+function cookieValue(name) {
+  const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^;]*)'));
+  return match ? decodeURIComponent(match[1]) : '';
+}
+
 (function () {
   'use strict';
 
-  // Gunakan Pixel yang sudah dimuat oleh kode dasar di HTML.
-  // Jangan init ulang dan jangan mengirim PageView kedua kali.
   if (typeof window.fbq !== 'function') return;
 
   document.addEventListener('click', function (e) {
@@ -23,10 +21,33 @@
         host === 'web.whatsapp.com';
     } catch (err) {}
 
-    if (isWhatsApp) {
-      window.fbq('track', 'Contact');
-    } else if (a.hasAttribute('data-register')) {
-      window.fbq('track', 'Lead');
-    }
+    var eventName = isWhatsApp ? 'Contact' : (a.hasAttribute('data-register') ? 'Lead' : null);
+    if (!eventName) return;
+
+    var eventId = (window.crypto && typeof window.crypto.randomUUID === 'function')
+      ? window.crypto.randomUUID()
+      : 'ssa-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+
+    // Browser dan server memakai event_name + event_id yang sama agar Meta dapat deduplikasi.
+    window.fbq('track', eventName, {}, { eventID: eventId });
+
+    var payload = {
+      event_name: eventName,
+      event_id: eventId,
+      event_source_url: window.location.href,
+      fbp: cookieValue('_fbp'),
+      fbc: cookieValue('_fbc')
+    };
+
+    // keepalive membantu request tetap terkirim ketika pengunjung berpindah ke WhatsApp/form.
+    try {
+      fetch('/api/meta-capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+        credentials: 'same-origin'
+      }).catch(function () {});
+    } catch (err) {}
   });
 })();
