@@ -55,6 +55,10 @@ export async function onRequest(context) {
   if (typeof body.fbp === "string" && body.fbp.length <= 200 && /^fb\.1\./.test(body.fbp)) userData.fbp = body.fbp;
   if (typeof body.fbc === "string" && body.fbc.length <= 500 && /^fb\.1\./.test(body.fbc)) userData.fbc = body.fbc;
 
+  if (!userData.fbp && !userData.fbc) {
+    return json({ error: "Cookie Meta belum tersedia untuk pencocokan event" }, 400);
+  }
+
   const event = {
     event_name: body.event_name,
     event_time: Math.floor(Date.now() / 1000),
