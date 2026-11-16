@@ -47,7 +47,19 @@ function cookieValue(name) {
         body: JSON.stringify(payload),
         keepalive: true,
         credentials: 'same-origin'
-      }).catch(function () {});
+      }).then(function (response) {
+        return response.text().then(function (text) {
+          var result;
+          try { result = JSON.parse(text); } catch (err) { result = { raw_response: text }; }
+          if (!response.ok) {
+            console.error('[SSA Meta CAPI] Request failed', response.status, result);
+          } else {
+            console.info('[SSA Meta CAPI] Response', response.status, result);
+          }
+        });
+      }).catch(function (error) {
+        console.error('[SSA Meta CAPI] Network error', error && error.message ? error.message : error);
+      });
     } catch (err) {}
   });
 })();
