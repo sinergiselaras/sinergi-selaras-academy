@@ -52,7 +52,7 @@ export async function onRequest(context) {
   let body;
   try { body = await request.json(); } catch { return json({ error: "JSON tidak valid" }, 400, requestOrigin); }
 
-  const allowedEvents = new Set(["Contact", "Lead"]);
+  const allowedEvents = new Set(["Contact", "Lead", "ViewContent"]);
   if (!allowedEvents.has(body.event_name)) return json({ error: "Event tidak diizinkan" }, 400, requestOrigin);
   if (typeof body.event_id !== "string" || !/^[A-Za-z0-9._:-]{1,100}$/.test(body.event_id)) {
     return json({ error: "Event ID tidak valid" }, 400, requestOrigin);
